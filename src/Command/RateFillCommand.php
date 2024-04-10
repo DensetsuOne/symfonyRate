@@ -4,12 +4,12 @@ namespace App\Command;
 
 use App\Entity\Rate;
 use Doctrine\ORM\EntityManagerInterface;
-//use Shapecode\Bundle\CronBundle\Attribute\AsCronJob;
+use Shapecode\Bundle\CronBundle\Attribute\AsCronJob;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-//#[AsCronJob('*/5 * * * *', null, 100)]
+#[AsCronJob('*/5 * * * *', null, 100)]
 class RateFillCommand extends Command
 {
     private EntityManagerInterface $em;
@@ -55,8 +55,8 @@ class RateFillCommand extends Command
                 $rate->setCharCode($domElement['CharCode']);
                 $rate->setNominal($domElement['Nominal']);
                 $rate->setName($domElement['Name']);
-                $rate->setValue(number_format(str_replace(',', '.', $domElement['Value']), 2));
-                $rate->setVunitRate(number_format(str_replace(',', '.', $domElement['VunitRate']), 2));
+                $rate->setValue(round(str_replace(',', '.', $domElement['Value']), 10));
+                $rate->setVunitRate(round(str_replace(',', '.', $domElement['VunitRate']), 10));
                 $this->em->persist($rate);
                 $this->em->flush();
             }

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4404891ad0385451bd3ddef5502dff9e",
+    "content-hash": "068fa1aabf19695e5795ba1867ea716a",
     "packages": [
         {
             "name": "composer/semver",
@@ -1307,6 +1307,67 @@
             "time": "2023-08-16T21:49:04+00:00"
         },
         {
+            "name": "dragonmantank/cron-expression",
+            "version": "v3.3.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dragonmantank/cron-expression.git",
+                "reference": "adfb1f505deb6384dc8b39804c5065dd3c8c8c0a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dragonmantank/cron-expression/zipball/adfb1f505deb6384dc8b39804c5065dd3c8c8c0a",
+                "reference": "adfb1f505deb6384dc8b39804c5065dd3c8c8c0a",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.2|^8.0",
+                "webmozart/assert": "^1.0"
+            },
+            "replace": {
+                "mtdowling/cron-expression": "^1.0"
+            },
+            "require-dev": {
+                "phpstan/extension-installer": "^1.0",
+                "phpstan/phpstan": "^1.0",
+                "phpstan/phpstan-webmozart-assert": "^1.0",
+                "phpunit/phpunit": "^7.0|^8.0|^9.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Cron\\": "src/Cron/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Chris Tankersley",
+                    "email": "chris@ctankersley.com",
+                    "homepage": "https://github.com/dragonmantank"
+                }
+            ],
+            "description": "CRON for PHP: Calculate the next or previous run date and determine if a CRON expression is due",
+            "keywords": [
+                "cron",
+                "schedule"
+            ],
+            "support": {
+                "issues": "https://github.com/dragonmantank/cron-expression/issues",
+                "source": "https://github.com/dragonmantank/cron-expression/tree/v3.3.3"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/dragonmantank",
+                    "type": "github"
+                }
+            ],
+            "time": "2023-08-10T19:36:49+00:00"
+        },
+        {
             "name": "egulias/email-validator",
             "version": "4.0.2",
             "source": {
@@ -1994,6 +2055,209 @@
                 "source": "https://github.com/php-fig/log/tree/3.0.0"
             },
             "time": "2021-07-14T16:46:02+00:00"
+        },
+        {
+            "name": "ramsey/collection",
+            "version": "2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ramsey/collection.git",
+                "reference": "a4b48764bfbb8f3a6a4d1aeb1a35bb5e9ecac4a5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ramsey/collection/zipball/a4b48764bfbb8f3a6a4d1aeb1a35bb5e9ecac4a5",
+                "reference": "a4b48764bfbb8f3a6a4d1aeb1a35bb5e9ecac4a5",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.1"
+            },
+            "require-dev": {
+                "captainhook/plugin-composer": "^5.3",
+                "ergebnis/composer-normalize": "^2.28.3",
+                "fakerphp/faker": "^1.21",
+                "hamcrest/hamcrest-php": "^2.0",
+                "jangregor/phpstan-prophecy": "^1.0",
+                "mockery/mockery": "^1.5",
+                "php-parallel-lint/php-console-highlighter": "^1.0",
+                "php-parallel-lint/php-parallel-lint": "^1.3",
+                "phpcsstandards/phpcsutils": "^1.0.0-rc1",
+                "phpspec/prophecy-phpunit": "^2.0",
+                "phpstan/extension-installer": "^1.2",
+                "phpstan/phpstan": "^1.9",
+                "phpstan/phpstan-mockery": "^1.1",
+                "phpstan/phpstan-phpunit": "^1.3",
+                "phpunit/phpunit": "^9.5",
+                "psalm/plugin-mockery": "^1.1",
+                "psalm/plugin-phpunit": "^0.18.4",
+                "ramsey/coding-standard": "^2.0.3",
+                "ramsey/conventional-commits": "^1.3",
+                "vimeo/psalm": "^5.4"
+            },
+            "type": "library",
+            "extra": {
+                "captainhook": {
+                    "force-install": true
+                },
+                "ramsey/conventional-commits": {
+                    "configFile": "conventional-commits.json"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Ramsey\\Collection\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ben Ramsey",
+                    "email": "ben@benramsey.com",
+                    "homepage": "https://benramsey.com"
+                }
+            ],
+            "description": "A PHP library for representing and manipulating collections.",
+            "keywords": [
+                "array",
+                "collection",
+                "hash",
+                "map",
+                "queue",
+                "set"
+            ],
+            "support": {
+                "issues": "https://github.com/ramsey/collection/issues",
+                "source": "https://github.com/ramsey/collection/tree/2.0.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/ramsey",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/ramsey/collection",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2022-12-31T21:50:55+00:00"
+        },
+        {
+            "name": "shapecode/cron-bundle",
+            "version": "7.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/shapecode/cron-bundle.git",
+                "reference": "7a9015450bee3ab9f78910ed74cd18257eec8427"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/shapecode/cron-bundle/zipball/7a9015450bee3ab9f78910ed74cd18257eec8427",
+                "reference": "7a9015450bee3ab9f78910ed74cd18257eec8427",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/collections": "^2.1",
+                "doctrine/dbal": "^3.7 || ^4.0",
+                "doctrine/doctrine-bundle": "^2.11",
+                "doctrine/event-manager": "^2.0",
+                "doctrine/orm": "^2.17 || ^3.0",
+                "doctrine/persistence": "^3.2",
+                "dragonmantank/cron-expression": "^3.3",
+                "php": "^8.2",
+                "psr/clock": "^1.0",
+                "ramsey/collection": "^2.0",
+                "symfony/config": "^6.4 || ^7.0",
+                "symfony/console": "^6.4 || ^7.0",
+                "symfony/dependency-injection": "^6.4 || ^7.0",
+                "symfony/event-dispatcher": "^6.4 || ^7.0",
+                "symfony/event-dispatcher-contracts": "^3.4",
+                "symfony/framework-bundle": "^6.4 || ^7.0",
+                "symfony/http-foundation": "^6.4 || ^7.0",
+                "symfony/http-kernel": "^6.4 || ^7.0",
+                "symfony/process": "^6.4 || ^7.0",
+                "symfony/stopwatch": "^6.4 || ^7.0"
+            },
+            "require-dev": {
+                "doctrine/coding-standard": "^12.0",
+                "icanhazstring/composer-unused": "^0.8",
+                "maglnet/composer-require-checker": "^4.7",
+                "phpstan/phpstan": "^1.10",
+                "phpstan/phpstan-deprecation-rules": "^1.1",
+                "phpstan/phpstan-doctrine": "^1.3",
+                "phpstan/phpstan-phpunit": "^1.3",
+                "phpstan/phpstan-strict-rules": "^1.5",
+                "phpstan/phpstan-symfony": "^1.3",
+                "phpunit/phpunit": "^10.5",
+                "roave/security-advisories": "dev-master",
+                "squizlabs/php_codesniffer": "^3.7",
+                "symfony/clock": "^7.0",
+                "symfony/var-dumper": "^7.0"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "7.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Shapecode\\Bundle\\CronBundle\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nikita Loges",
+                    "email": "dev@loges.one",
+                    "homepage": "https://loges.one"
+                },
+                {
+                    "name": "Contributors",
+                    "homepage": "https://github.com/shapecode/cron-bundle/graphs/contributors"
+                }
+            ],
+            "description": "This bundle provides scheduled execution of Symfony commands",
+            "homepage": "https://github.com/shapecode/cron-bundle",
+            "keywords": [
+                "bundle",
+                "command",
+                "cron",
+                "cronjob",
+                "execute",
+                "interval",
+                "schedule",
+                "shapecode",
+                "symfony",
+                "time"
+            ],
+            "support": {
+                "email": "support@shapeocode.de",
+                "issues": "https://github.com/shapecode/cron-bundle/issues",
+                "source": "https://github.com/shapecode/cron-bundle/releases",
+                "wiki": "https://github.com/shapecode/cron-bundle/wiki"
+            },
+            "funding": [
+                {
+                    "url": "http://github.com/sponsors/nicklog",
+                    "type": "github"
+                },
+                {
+                    "url": "https://liberapay.com/nicklog",
+                    "type": "liberapay"
+                },
+                {
+                    "url": "http://paypal.me/nloges",
+                    "type": "paypal"
+                }
+            ],
+            "time": "2024-02-29T14:10:59+00:00"
         },
         {
             "name": "symfony/apache-pack",
@@ -9731,7 +9995,9 @@
     "platform": {
         "php": ">=8.2",
         "ext-ctype": "*",
-        "ext-iconv": "*"
+        "ext-curl": "*",
+        "ext-iconv": "*",
+        "ext-simplexml": "*"
     },
     "platform-dev": [],
     "plugin-api-version": "2.6.0"

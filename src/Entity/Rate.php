@@ -29,15 +29,15 @@ class Rate
     #[ORM\Column(type: 'float', nullable: true)]
     private ?float $value = null;
 
-    #[ORM\Column(type: 'integer', nullable: true)]
-    private ?int $vunitRate = null;
+    #[ORM\Column(type: 'float', nullable: true)]
+    private ?float $vunitRate = null;
 
-    public function getVunitRate(): ?int
+    public function getVunitRate(): ?float
     {
         return $this->vunitRate;
     }
 
-    public function setVunitRate(?int $vunitRate): void
+    public function setVunitRate(?float $vunitRate): void
     {
         $this->vunitRate = $vunitRate;
     }

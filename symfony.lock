@@ -40,6 +40,9 @@
             "./tests/bootstrap.php"
         ]
     },
+    "shapecode/cron-bundle": {
+        "version": "7.0.0"
+    },
     "symfony/apache-pack": {
         "version": "1.0",
         "recipe": {
