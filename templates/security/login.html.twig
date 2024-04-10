@@ -1,0 +1,33 @@
+{% extends 'layout/form.html.twig' %}
+
+{% block title %}Авторизация{% endblock %}
+
+{% block form_security %}
+    <form method="post">
+        {% if error %}
+            <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+        {% endif %}
+
+        {% if app.user %}
+            <div class="badge bg-light text-dark">
+                {{ app.user.userIdentifier }}, <a class="bg-light text-dark" href="{{ path('app_logout') }}">Logout</a>
+            </div>
+        {% endif %}
+        <h3 class="mb-5">Авторизация</h3>
+
+        <div class="form-floating mb-4">
+            <input type="email" value="{{ last_username }}" placeholder="email" name="_username" id="username" class="form-control form-control-lg" />
+            <label class="form-label" for="username">Почта</label>
+        </div>
+
+        <div class="form-floating mb-4">
+            <input type="password" name="_password" placeholder="password" id="password" class="form-control form-control-lg" />
+            <label class="form-label" for="password">Password</label>
+        </div>
+        <input type="hidden" name="_csrf_token"
+               value="{{ csrf_token('authenticate') }}"
+        >
+        <button class="btn btn-outline-secondary btn-lg text-light" type="submit">Авторизация</button>
+    </form>
+{% endblock %}
+

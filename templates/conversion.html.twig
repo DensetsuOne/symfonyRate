@@ -1,0 +1,29 @@
+{% extends 'layout/form.html.twig' %}
+
+    {% block form %}
+        {% if app.user %}
+            <h1>Конвертация</h1>
+            <form id="conversion-form">
+                <select class="form-select" aria-label="Default select example" name="code">
+                    {% for elem in json %}
+                        <option value="{{ elem.CharCode }}">{{ elem.CharCode }}<br></option>
+                    {% endfor %}
+                </select>
+                <label for="code"></label>
+                <input type="text" name="val" class="form-control" required>
+                <label for="val"></label>
+                <input type="text" name="sum" id="sum" class="form-control disabled" disabled>
+                <label for="sum"></label><br>
+                <input type="submit" value="Конвертировать" class="btn btn-outline-secondary btn-lg text-light">
+            </form>
+            <script src="{{ asset('assets/script/conversion.js') }}"></script>
+        {% endif %}
+    {% endblock %}
+  {% block auth %}
+      {% if not app.user %}
+          <div class="alert alert-secondary alert-dismissible fade show" role="alert">
+              Для отображения информации требуется авторизироваться
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+      {% endif %}
+  {% endblock %}
