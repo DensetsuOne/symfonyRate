@@ -1,0 +1,13 @@
+App\Entity\User:
+  constraints:
+    - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity: email
+  properties:
+    email:
+      - NotBlank: ~
+      - Type: string
+      - Email: ~
+    password:
+      - NotBlank: ~
+      - Length:
+          min: 8
+          minMessage: 'Минимальное колличество символов 8'

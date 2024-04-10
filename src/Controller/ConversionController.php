@@ -55,7 +55,7 @@ class ConversionController extends AbstractController
         }
 
        return $this->render('conversion.html.twig', [
-           'json' => $rate,
+           'json' => $rate ?? null,
            'sum'  => $sum ?? null,
        ]);
     }
