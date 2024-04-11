@@ -46,7 +46,7 @@ class ConversionController extends AbstractController
                     }
                 }
                 return new JsonResponse([
-                    'sum' => number_format($sum, 2) ?? null,
+                    'sum' => number_format($sum, 2) . ' руб.' ?? null,
                 ]);
             }
         }
