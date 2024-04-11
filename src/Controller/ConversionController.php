@@ -36,10 +36,8 @@ class ConversionController extends AbstractController
             }
 
             if ($code) {
-                $rates = $em->getRepository(Rate::class)->findAll();
                 foreach ($rate as $domElement) {
                     if ($domElement->getCharCode() == $code) {
-                        $value = str_replace(',', '.', $domElement->getVunitRate());
                         $val = str_replace(',', '.', $val);
                         $value = round($domElement->getVunitRate(), 2);
                         $sum = $val * $value;
