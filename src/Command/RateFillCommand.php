@@ -9,7 +9,7 @@ use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-#[AsCronJob('*/5 * * * *', null, 100)]
+#[AsCronJob('*/5 * * * *')]
 class RateFillCommand extends Command
 {
     private EntityManagerInterface $em;
@@ -27,9 +27,7 @@ class RateFillCommand extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
-        $curl = curl_init('http://www.cbr.ru/scripts/XML_daily.asp');
-        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-        $xml = curl_exec($curl);
+        $xml = file_get_contents('http://www.cbr.ru/scripts/XML_daily.asp');
         $html = simplexml_load_string($xml);
         $json = json_encode($html);
         $json = json_decode($json, true);

@@ -8,6 +8,7 @@ use Symfony\Bundle\FrameworkBundle\Console\Application;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Bundle\SecurityBundle\Security;
 use Symfony\Component\Console\Input\StringInput;
+use Symfony\Component\Console\Output\BufferedOutput;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -15,7 +16,7 @@ use Symfony\Component\HttpKernel\KernelInterface;
 
 class ConversionController extends AbstractController
 {
-    public function rate(Request $request, Security $security,KernelInterface $kernel, EntityManagerInterface $em): Response
+    public function rate(Request $request, Security $security, KernelInterface $kernel, EntityManagerInterface $em): Response
     {
         if ($security->getUser()) {
             $code = $request->get('code');
@@ -23,11 +24,16 @@ class ConversionController extends AbstractController
             $application = new Application($kernel);
             $application->setAutoExit(false);
             $input = new StringInput('shapecode:cron:scan');
-            $application->run($input);
+            $output = new BufferedOutput();
+            $application->run($input, $output);
             $input = new StringInput('shapecode:cron:run');
-            $application->run($input);
+            $application->run($input, $output);
             $rate = $em->getRepository(Rate::class)->findAll();
-
+            if (empty($rate)) {
+                $input = new StringInput('app:rate-fill');
+                $application->run($input, $output);
+                $rate = $em->getRepository(Rate::class)->findAll();
+            }
 
             if ($code) {
                 $rates = $em->getRepository(Rate::class)->findAll();
