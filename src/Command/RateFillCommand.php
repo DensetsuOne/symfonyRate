@@ -43,8 +43,8 @@ class RateFillCommand extends Command
                 $rate->setCharCode($domElement['CharCode']);
                 $rate->setNominal($domElement['Nominal']);
                 $rate->setName($domElement['Name']);
-                $rate->setValue(number_format(str_replace(',', '.', $domElement['Value']), 2));
-                $rate->setVunitRate(number_format(str_replace(',', '.', $domElement['VunitRate']), 2));
+                $rate->setValue(number_format(str_replace(',', '.', $domElement['Value']), 10));
+                $rate->setVunitRate(number_format(str_replace(',', '.', $domElement['VunitRate']), 10));
                 $this->em->persist($rate);
                 $this->em->flush();
             }
