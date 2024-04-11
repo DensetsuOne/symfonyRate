@@ -6,7 +6,7 @@
             <form id="conversion-form">
                 <select class="form-select" aria-label="Default select example" name="code">
                     {% for elem in json %}
-                        <option value="{{ elem.CharCode }}">{{ elem.CharCode }}<br></option>
+                        <option value="{{ elem.CharCode }}">{{ elem.CharCode }} - {{ elem.name }}<br></option>
                     {% endfor %}
                 </select>
                 <label for="code"></label>
